@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.github.com https://ntfy.sh; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#1e293b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Planning">
+  <title>Planning à deux</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icone-192.png">
+  <link rel="apple-touch-icon" href="icone-192.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header id="entete">
+    <div class="ligne-titre">
+      <h1>Planning à deux</h1>
+      <div class="actions-entete">
+        <button type="button" id="bouton-historique" class="bouton-icone" title="Historique des modifications" aria-label="Historique">🕘</button>
+        <button type="button" id="bouton-reglages" class="bouton-icone" title="Réglages" aria-label="Réglages">⚙️</button>
+      </div>
+    </div>
+    <nav class="ligne-semaine" aria-label="Semaine">
+      <button type="button" id="semaine-avant" class="bouton-icone" aria-label="Semaine précédente">◀</button>
+      <div class="titre-semaine">
+        <span id="titre-semaine"></span>
+        <button type="button" id="bouton-aujourdhui" class="bouton petit">Aujourd'hui</button>
+      </div>
+      <button type="button" id="semaine-apres" class="bouton-icone" aria-label="Semaine suivante">▶</button>
+    </nav>
+    <div id="legende" class="legende"></div>
+  </header>
+  <main id="principal">
+    <div id="jours"></div>
+    <div class="bas-semaine">
+      <button type="button" id="bouton-copier" class="bouton">Copier cette semaine…</button>
+    </div>
+  </main>
+  <div id="accueil" class="accueil" hidden></div>
+  <dialog id="fenetre"></dialog>
+  <div id="toasts" aria-live="polite"></div>
+  <div id="etat-sync" class="etat-sync" hidden></div>
+</body>
+</html>
